@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1545438465 source:c:\users\maxime\desktop\projetsc\motmystere\main.cpp
+	<iostream>
+	<ctime>
+	<fstream>
+	<cstdlib>
+	<string>
+	"melange.h"
+	"time.h"
+
+1545436336 c:\users\maxime\desktop\projetsc\motmystere\melange.h
+	<string>
+
+1545436739 source:c:\users\maxime\desktop\projetsc\motmystere\melange.cpp
+	"melange.h"
+	<string>
+	<iostream>
+	<ctime>
+	<cstdlib>
+
