@@ -12,16 +12,20 @@ int main()
 {
     bool recommencer;
     do {
-    srand(time(NULL));
+    srand(time(0));
 
     // 1 saisie et stockage du mot à trouver
-    cout << endl;
 
+    cout << endl;
+    int coupsMax(0);
+
+    cout << "Saisissez le nombre de coups maximum : ";
+    cin >> coupsMax;
 
     string motMystere;
     string ligne;
 
-    string dictionnaire = "C:/Users/Maxime/Desktop/ProjetsC/motmystere/fichiers/dico.txt";
+    string dictionnaire = "fichiers/dico.txt";
 
     ifstream monDico(dictionnaire.c_str());
 
@@ -29,7 +33,7 @@ int main()
     {
         long positionLigne(0);
 
-        while (getline(monDico, ligne)) {
+        while (getline(monDico, ligne)) { // On recupere le nombre de lignes dans le fichier.
             positionLigne++;
         }
 
@@ -60,8 +64,10 @@ int main()
 
     string motSaisi;
 
+    int nbCoups(0);
     do {
-        cout << "Quel est ce mot ? " << motMelange << endl;
+        nbCoups++;
+        cout << "Quel est ce mot ? " << motMelange << " (essai numero " << nbCoups << ")" << endl;
         cin >> motSaisi;
 
         if (motSaisi != motMystere)
@@ -70,12 +76,14 @@ int main()
             cout << endl;
         }
 
-    } while (motSaisi != motMystere);
-    cout << "Bravo !" << endl;
+
+    } while (motSaisi != motMystere && nbCoups != coupsMax);
+    if (motSaisi == motMystere) cout << "Bravo !" << endl;
+    if (motSaisi != motMystere) cout << "Nombre de coups maximums atteints ! " << endl;
     cout << "Voulez vous recommencer ? (o/n) " << endl;
     string restart;
     cin >> restart;
-    if (restart == "o") recommencer = true;
+    if (restart == "o" || restart == "O") recommencer = true;
     else recommencer = false;
 
     } while (recommencer);

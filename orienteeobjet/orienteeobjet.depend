@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1545506468 source:c:\users\maxime\desktop\projetsc\orienteeobjet\personnage.cpp
+	"Personnage.h"
+	<string>
+
+1545506907 c:\users\maxime\desktop\projetsc\orienteeobjet\personnage.h
+	<string>
+	"Arme.h"
+
+1545506856 source:c:\users\maxime\desktop\projetsc\orienteeobjet\main.cpp
+	<iostream>
+	<string>
+	"Personnage.h"
+	"Arme.h"
+
+1545506238 c:\users\maxime\desktop\projetsc\orienteeobjet\arme.h
+	<iostream>
+	<string>
+
+1545506552 source:c:\users\maxime\desktop\projetsc\orienteeobjet\arme.cpp
+	<iostream>
+	"Arme.h"
+	<string>
+

@@ -72,7 +72,7 @@ int main()
         cout << "OUI" << endl;
 
         monFlux << "Cette phrase sera écrite dans le fichier" << endl; // Remplacer simplement cout par monFlux.
-        monFlux.close() // Pour refermer le fichier, il se referme automatique une fois sorti de sa boucle de traitement, mais il peut parfois être utile de le fermer prématurément.
+        monFlux.close(); // Pour refermer le fichier, il se referme automatique une fois sorti de sa boucle de traitement, mais il peut parfois être utile de le fermer prématurément.
     }
     else
     {
@@ -122,6 +122,19 @@ int main()
     vector<int> *pointeurD(0); //Un pointeur qui peut contenir l'adresse d'un tableau dynamique de nombres entiers
 
     int const *pointeurE(0); //Un pointeur qui peut contenir l'adresse d'un nombre entier constant
+
+    unsigned int valeur(16);
+    cout << valeur << endl; // Retourne 16
+    cout << &valeur << endl; // Retourne l'adresse de la variable (base 16).
+    pointeurB = &valeur; // Pointeur B prends la valeur de l'adresse de la variable valeur.
+    cout << *pointeurB << endl; // Accède à la valeur pointée par le pointeur.
+
+    int *pointeurF(0); // Création d'un pointeur qui pointe vers rien (case 0).
+    pointeurF = new int; // Allocation d'une case pour une valeur int sur laquelle pointe le pointeur.
+
+    *pointeurF = 2; // On accède à la case pointée et on en modifie la valeur.
+    delete pointeurF; // On libère la case mémoire
+    pointeurF = 0; // On refait pointer le pointeur vers rien.
 
     return 0;
 }
